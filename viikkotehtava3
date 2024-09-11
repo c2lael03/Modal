@@ -24,11 +24,15 @@ const App = () => {
           </View>
         </View>
       </Modal>
+
+       {modalVisible ? null : (
+
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}>
         <Text style={styles.textStyle}>Show modal message</Text>
       </Pressable>
+       )}
     </View>
   );
 };
@@ -44,6 +48,7 @@ const styles = StyleSheet.create({
     //margin: 20,
     //flex: 1,
     width: '100%',
+    marginTop: -300,
     backgroundColor: 'white',
     //borderRadius: 20,
     padding: 35,
@@ -63,12 +68,16 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   buttonOpen: {
-    backgroundColor: '#FFFFFF',
+      backgroundColor: 'transparent',
+  borderWidth: 0, // Poistaa reunuksen
+  padding: 0, // Poistaa sisäisen täytteen
     
 
   },
   buttonClose: {
-    backgroundColor: '#FFFFFF',
+      backgroundColor: 'transparent',
+  borderWidth: 0, // Poistaa reunuksen
+  padding: 0, // Poistaa sisäisen täytteen
   },
   textStyle: {
     color: 'black',
